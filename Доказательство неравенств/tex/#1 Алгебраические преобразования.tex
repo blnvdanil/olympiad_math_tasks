@@ -1,0 +1,287 @@
+\documentclass[a4paper,12pt,leqno]{article}
+
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+\renewcommand{\rmdefault}{cmss}
+\renewcommand{\ttdefault}{cmss}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+%% Номера формул
+%\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+
+%%% Теоремы
+\theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{proposition}[theorem]{Утверждение}
+
+\theoremstyle{definition} % "Определение"
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{problem}{Задача}[section]
+
+\theoremstyle{remark} % "Примечание"
+\newtheorem*{nonum}{Решение}
+
+%%% Программирование
+\usepackage{etoolbox} % логические операторы
+
+%%% Страница
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+\usepackage{geometry} % Простой способ задавать поля
+\geometry{top=20mm}
+\geometry{bottom=20mm}
+\geometry{left=20mm}
+\geometry{right=20mm}
+%
+%\usepackage{fancyhdr} % Колонтитулы
+% 	\pagestyle{fancy}
+%\renewcommand{\headrulewidth}{0pt}  % Толщина линейки, отчеркивающей верхний колонтитул
+% 	\lfoot{Нижний левый}
+% 	\rfoot{Нижний правый}
+% 	\rhead{Верхний правый}
+% 	\chead{Верхний в центре}
+% 	\lhead{Верхний левый}
+%	\cfoot{Нижний в центре} % По умолчанию здесь номер страницы
+
+\usepackage{setspace} % Интерлиньяж
+%\onehalfspacing % Интерлиньяж 1.5
+%\doublespacing % Интерлиньяж 2
+%\singlespacing % Интерлиньяж 1
+
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе.
+
+\usepackage{soul} % Модификаторы начертания
+
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\hypersetup{				% Гиперссылки
+	unicode=true,           % русские буквы в раздела PDF
+	pdftitle={\#1 Алгебраические преобразования},   % Заголовок
+	pdfauthor={},      % Автор
+	pdfsubject={},      % Тема
+	pdfcreator={}, % Создатель
+	%pdfproducer={Производитель}, % Производитель
+	%pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+	colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+	linkcolor=red,          % внутренние ссылки
+	citecolor=black,        % на библиографию
+	filecolor=magenta,      % на файлы
+	urlcolor=cyan           % на URL
+}
+
+\usepackage{csquotes} % Еще инструменты для ссылок
+
+\usepackage[style=authoryear,maxcitenames=2,backend=biber,sorting=nty]{biblatex}
+
+\usepackage{multicol} % Несколько колонок
+
+\usepackage{tikz} % Работа с графикой
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\usepackage{ragged2e}
+\usepackage{microtype}
+
+
+\justifying
+\sloppy
+\tolerance=500
+\hyphenpenalty=10000
+\emergencystretch=3em
+
+\title{\textbf{Алгебраические преобразования}}
+\date{}
+\begin{document}
+	\fontsize{14}{16pt}\selectfont
+	\parskip=0mm
+	\linespread{1}
+	\maketitle
+	
+	\newcounter{zadacha}
+	
+	\newcommand{\z}{\addtocounter{zadacha}{1}%
+		\boxed{\arabic{zadacha}} }
+	\section*{На занятии}
+	\textbf{\textit{Разложение на множители}}
+	\begin{enumerate}
+		%kvant
+		\item[\z] Докажите, что $x^3 + y^3 \geqslant xy(x+y)$, где $x, y \geq 0$.
+		
+		\item[\z] Докажите, что $$\frac{1}{1+x^2} + \frac{1}{1+y^2} \leqslant \frac{2}{1+xy}$$ для любых $x, y \in [0; 1]$.
+		
+		\item[\z] Пусть $0 < a < b$. Докажите, что $$\frac{a}{b} < \frac{a+x}{b+x}$$ для любого $x > 0$.
+		
+	\end{enumerate}
+	
+	\textbf{\textit{Выделение полного квадрата}}
+	
+	\begin{enumerate}
+		\item[\z] Докажите неравенство $$x + y \geqslant 2\sqrt{xy}$$ для $x, y > 0$.
+		
+		\item[\z] Докажите, что $$a^2+b^2 \geqslant ab$$ для любых $a$ и $b$.
+		
+		\item[\z] Докажите, что $$x^2+y^2+1 \geqslant x + y + xy$$ для любых $x$ и $y$.
+	\end{enumerate}
+	
+	\textbf{\textit{Метод разбиения}}
+	
+	\begin{enumerate}
+		\item[\z] Докажите неравенство $$a+b+c \geqslant \sqrt{ab} + \sqrt{bc} + \sqrt{ca} ,$$
+		где $a, b, c > 0$. 
+		\newpage
+		\item[\z] Докажите неравенство $$(a+b)(b+c)(c+a) \geqslant 8abc ,$$
+		где $a, b, c > 0$.
+	\end{enumerate}
+	
+	\textbf{\textit{Метод промежуточной оценки}}
+	
+	\begin{enumerate}
+		\item[\z] Докажите неравенство $$1 < \frac{a}{d + a + b} + \frac{b}{a + b + c} +\frac{c}{b+c+d} + \frac{d}{c+d+a} < 2$$
+		для любых положительных $a, b, c, d$.
+	\end{enumerate}
+	
+	\textbf{\textit{Метод подстановки}}
+	
+	\begin{enumerate}
+		\item[\z] Докажите неравенство $$\frac{a}{b} + \frac{b}{a} \geqslant 2$$ для $a, b > 0.$
+		
+		\item[\z] Докажите неравенство $$\frac{xy}{z} + \frac{yz}{x} + \frac{zx}{y} \geqslant x + y + z$$ для любых $x, y, z > 0$.
+	\end{enumerate}
+	
+	\textbf{\textit{Замена переменной}}
+	
+	\begin{enumerate}
+		\item[\z] (\textit{Неравенство Несбитта}) Докажите неравенство $$\frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a+b} \geqslant \frac{3}{2}$$
+		для $a, b, c > 0$.
+		
+		\item[\z] Докажите неравенство $$x^3 -4x^2-3x+19 > 0 ,$$
+		если $x \geqslant 3$.
+		
+		\item[\z] Докажите неравенство $$-\frac{1}{2} \leqslant \frac{(x+y)(1-xy)}{(1+x^2)(1+y^2)}\leqslant \frac{1}{2}$$
+		для любых $x, y$.
+	\end{enumerate}
+	\newpage
+	\textbf{\textit{Метод упорядочивания переменных}}
+	
+	\begin{enumerate}
+		\item[\z] Докажите, что $$\frac{x}{1+y} + \frac{y}{1+x} \leqslant 1 ,$$ где $x, y \in [0; 1].$ 
+	\end{enumerate}
+	
+	\section*{Домашка}
+	\textbf{\textit{Докажите неравенства}}
+	
+	\newcommand{\ner}[1]{\item[\z] #1}
+	
+	\begin{enumerate}
+		\ner{ $2(x^3 + y^3) \geqslant (x+y)(x^2+y^2)$, где $x, y > 0$.}
+		
+		\ner{$(a^2-b^2)(a^4-b^4) \leqslant (a^3-b^3)$, где $a, b \in \R$}
+		
+		\ner{$\displaystyle \sqrt{a} + \sqrt{b} \leqslant \sqrt{\frac{a^2}{b}} + \sqrt{\frac{b^2}{a}}$ для любых $a, b > 0$.}
+		
+		\ner{$\displaystyle\frac{a+b}{2} \cdot \frac{a^3+b^3}{2} \leqslant \frac{a^4+b^4}{2}$ для любых $a, b$.}
+		
+		\ner{$\displaystyle \frac{1}{a} + \frac{1}{b} \geqslant \frac{4}{a+b}$ для любых $a, b > 0$.}
+		
+		\ner{$\displaystyle\frac{a^2+b^2}{a+b} \geqslant \frac{a+b}{2} $ для любых $a, b > 0$.}
+		
+		\ner{$x^4+y^4+z^2+1\geqslant 2x(xy^2-x+z+1)$ для любых $z, y, z$.}
+		
+		\ner{$a^2 + b^2 +c^2 \geqslant ab+bc+ca$ для любых $x, y, z$.}
+		
+		\ner{$(x+y+z)^2\geqslant 3(xy+yz+zx)$ для любых $x, y, z$.}
+		
+		\ner{$a^2 + ab + b^2 \geqslant 3(a+b-1)$ для любых $a, b$.}
+		
+		\ner{$(x^2 + y^2+z^2)(xy+yz+zx)\geqslant 2(x^2y^2 + y^2z^2 +z^2x^2)$, где $x, y, z > 0$.}
+		
+		\ner{$(x+y+z)^4 \geqslant 8(xy+yz+zx)(x^2+y^2+z^2)$, где $x, y, z > 0$.}
+		
+		\ner{$\displaystyle\frac{1}{a^2+b^2} + \frac{1}{b^2+c^2} +\frac{1}{c^2+a^2} \leqslant \frac{a+b+c}{2abc}$, где $a, b, c > 0$.}
+		
+		\ner{$\displaystyle\frac{1}{1+x} +\frac{1}{1+y} \leqslant \frac{3}{1+x+y}$, где $x, y \in [0;1]$.}
+		
+		\ner{$\displaystyle1 + \frac{1}{\sqrt{2}} + \dots + \frac{1}{\sqrt{n}} \geqslant \sqrt{n}$ для каждого $n \in \N$.}
+		\newpage
+		\ner{ $\displaystyle x_0, x_1, \dots, x_n >0, \;\; n \geqslant 2$ $$\displaystyle \frac{x_1}{x_0 + x_1} + \frac{x_2}{x_0 + x_2} + \dots + \frac{x_n}{x_0 + x_n} > \frac{x_1+x_2+\dots+x_n}{x_0+x_1+\dots+x_n},$$}
+		
+		\ner{$\displaystyle\frac{1}{1^2} + \frac{1}{2^2} +\frac{1}{3^2} + \dots + \frac{1}{n^2} < 2$ для каждого $n \in \N$.}
+		
+		\ner{$\displaystyle\frac{1}{2} \cdot \frac{3}{4} \cdot \dots \cdot \frac{2n-1}{2n} < \frac{1}{\sqrt{2n+1}} $ для каждого натурального $n$.}
+		
+		\ner{$(ab+bc+ca)^2 \geqslant 3abc(a+b+c)$ для любых $a, b, c$.}
+		
+		\ner{$\displaystyle\frac{1}{a} + \frac{1}{b} + \frac{1}{c} \geqslant \frac{3(a+b+c)}{ab+bc+ca}$ для любых $a, b, c > 0$.}
+		
+		\ner{$a^4+b^4+c^4 \geqslant abc(a+b+c)$ для любых $a, b, c$.}
+		
+		\ner{$\sqrt{(x+y)(y+z)} + \sqrt{(x+z)(z+x)} \sqrt{(z+x)(x+y)} \leqslant 2(x+y+z)$, где $x, y, z \geq 0$.}
+		
+		\ner{$\displaystyle\frac{x^3}{yz} + \frac{y^3}{zx} + \frac{z^3}{xy} \geqslant \frac{xy}{z} + \frac{yz}{x} + \frac{zx}{y}$ для любых $x, y, z > 0$.}
+		
+		\ner{$\displaystyle\frac{x^2}{y^2} + \frac{y^2}{z^2} + \frac{z^2}{x^2} \geqslant \frac{x}{z} + \frac{y}{x} + \frac{z}{y}$ для любых $x, y, z > 0$.}
+		
+		\ner{$2x^3+3y^3 \geqslant 4xy^2$ для любых $x, y > 0$.}
+		
+		\ner{$(x^a +y^a+z^a)(x^d+y^d+z^d) \geqslant (x^b+y^b +z^b)(x^c+y^c+z^c)$ для любых $x, y, z \geqslant 0$, где $0 < a < b < c < d$ и $a+d = b+c$.}
+		
+	\end{enumerate}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
