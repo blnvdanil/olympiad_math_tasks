@@ -1,0 +1,82 @@
+\documentclass[a4paper,12pt,leqno]{article}
+
+\input{../../preferences/preferences.sty}
+\input{../../preferences/tools}
+
+\usepackage{hyperref}
+\hypersetup{				% Гиперссылки
+	unicode=true,           % русские буквы в раздела PDF
+	pdftitle={Доказательство неравенств},   % Заголовок
+	pdfauthor={},      % Автор
+	pdfsubject={},      % Тема
+	pdfcreator={}, % Создатель
+	%pdfproducer={Производитель}, % Производитель
+	%pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+	colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+	linkcolor=red,          % внутренние ссылки
+	citecolor=black,        % на библиографию
+	filecolor=magenta,      % на файлы
+	urlcolor=cyan           % на URL
+}
+
+\title{Выравнивание знаменателей и метод спуска}
+
+\date{}
+
+\begin{document}
+	
+	\maketitle
+
+	\newcounter{num}
+
+	\newcommand{\z}{\addtocounter{num}{1}%
+	\boxed{\arabic{num}} }
+
+	\newcommand{\hw}{\addtocounter{num}{1}%
+	\text{ДЗ }\boxed{\arabic{num}} }
+
+	\section*{Упорядочение}
+	Докажите неравенства
+	\begin{enumerate}
+		\item[\z] $\displaystyle\frac{x+1}{y+1} + \frac{y+1}{z+1} + \frac{z+1}{x+1} \leqslant \frac{x}{y} + \frac{y}{z} + \frac{z}{x}$, для положительных $x, y, z$.
+		\item[\hw] $x^r(x-y)(x-z) + y^r(y-z)(y-x) + z^r (z-x)(z-y) \geqslant 0$, для положительных $x, y, z, r$.
+		\item[\hw] $\displaystyle\frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} + \frac{1}{d^2} \leqslant \frac{1}{a^2b^2c^2d^2}$, где $a+b+c+d = 3$ и $a, b, c, d > 0$.
+		\item[\hw] $\displaystyle\frac{1}{a^3} + \frac{1}{b^3} + \frac{1}{c^3} + \frac{1}{d^3} \leqslant \frac{1}{a^3b^3c^3d^3}$, где $a+b+c+d = 3$ и $a, b, c, d > 0$.	
+	\end{enumerate}
+	
+	\section*{Выравнивание знаменателей}
+	Докажите неравенства
+	\begin{enumerate}
+		\item[\z] $\displaystyle\frac{x^2}{1+x+xyz} + \frac{y^2}{1 + y + xyz} + \frac{z^2}{1 + z + xyz} \leqslant 1$, где $0 \leqslant x, y, z \leqslant 1$.
+		\item[\z] $\displaystyle\frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a+b} < 2$, где $a, b, c$ -- стороны треугольника.
+		\item[\hw] $\displaystyle\frac{1}{a^3+b^3+abc} + \frac{1}{b^3 + c^3 + abc} + \frac{1}{c^3 + a^3 + abc} \leqslant \frac{1}{abc}$, где $a, b, c > 0$. 
+		\item[\hw] $\displaystyle\frac{1}{a_1+a_2} + \frac{1}{a_2+a_3} + \frac{1}{a_3+a_1} > 1$, где $a_i > 1$, $a_1+a_2+a_3 = S$ 
+		
+		$\displaystyle\frac{a_i^2}{a_i-1} > S$ для всех $i=1, 2, 3.$
+		\item[\hw] $\displaystyle\frac{1}{1+x_1+x_1x_2} + \frac{1}{1+x_2 + x_2x_3} + \dots + \frac{1}{1+x_n + x_nx_1} > 1$, где $n > 3$, и числа $x_i > 0$, 
+		
+		$x_1 \cdot x_2  \cdots x_n = 1$.
+
+		\item[\hw] $\displaystyle\frac{xy}{x^5 + xy + y^5} + \frac{yz}{y^5 + yz + z^5} + \frac{zx}{z^5 + zx + x^5} \leqslant 1$, где $x, y, z > 0$ и $xyz=1$.
+		\item[\hw] $\displaystyle\frac{x^5-x^2}{x^5+y^2+z^2} + \frac{y^5-y^2}{x^2+y^5+z^2} + \frac{z^5-z^2}{x^2+y^2+z^5} \geqslant 0$, где $x, y, z > 0$ и $xyz \geqslant 1$.
+	\end{enumerate}
+
+	\section*{Метод спуска}
+	Докажите неравенства
+	\begin{enumerate}
+		\item[\hw] $\displaystyle\frac{x_1+x_2+\dots+x_n}{n} \geqslant \sqrt[n]{x_1x_2\dots x_n}$, где $x_i > 0$.
+		\item[\hw] $\displaystyle\sqrt[n]{x_1x_2\dots x_n} \geqslant \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}}$, где $x_i > 0$.
+		\item[\hw] $(1+x_1)(1+x_1+x_2)\dots (1+x_1+x_2+\dots +x_n) \geqslant \sqrt{(n+1)^{n+1}}\cdot \sqrt{x_1x_2\dots x_n}$, где $x_i > 0$.
+		\item[\hw] $\displaystyle\frac{1}{1+x_1} + \frac{1}{1+x_2} + \dots + \frac{1}{1+x_n}\geqslant \frac{n}{1+\sqrt[n]{x_1x_2\dots x_n}}$, где $x_i \geqslant 1$. 
+	\end{enumerate}
+
+
+
+
+\end{document}
+
+
+
+
+
+

@@ -1,0 +1,91 @@
+\documentclass[a4paper,12pt,leqno]{article}
+
+\input{../../preferences/preferences.sty}
+\input{../../preferences/tools}
+
+
+\usepackage{hyperref}
+\hypersetup{				% Гиперссылки
+	unicode=true,           % русские буквы в раздела PDF
+	pdftitle={Доказательство неравенств},   % Заголовок
+	pdfauthor={},      % Автор
+	pdfsubject={},      % Тема
+	pdfcreator={}, % Создатель
+	%pdfproducer={Производитель}, % Производитель
+	%pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+	colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+	linkcolor=red,          % внутренние ссылки
+	citecolor=black,        % на библиографию
+	filecolor=magenta,      % на файлы
+	urlcolor=cyan           % на URL
+}
+
+\title{Неравенство Чебышёва}
+
+
+
+
+
+\date{}
+
+\begin{document}
+	
+	\maketitle
+
+	\newcounter{num}
+
+	\newcommand{\z}{\addtocounter{num}{1}%
+	\boxed{\arabic{num}} }
+
+	\section*{На занятии}
+	
+	\begin{enumerate}
+		\item[\z] Докажите равенство для $x_1 \leqslant x_2 \leqslant \dots \leqslant x_n,\;$ $y_1 \leqslant y_2 \leqslant \dots \leqslant y_n$ $$n (x_1y_1 + x_2y_2 + \dots + x_ny_n) - (x_1+x_2 + \dots + x_n)(y_1+y_2 + \dots + y_n) = 
+		\sum\limits_{i < j} (x_j - x_i)(y_j-y_i).$$
+		
+		\item[\z] Докажите неравенство [Чебышёва] для $x_1 \leqslant x_2 \leqslant \dots \leqslant x_n,\;$ $y_1 \leqslant y_2 \leqslant \dots \leqslant y_n$
+		$$n(x_1y_1 + x_2y_2 + \dots + x_ny_n) \geqslant (x_1+x_2 + \dots + x_n)(y_1+y_2 + \dots + y_n).$$
+
+		\item[\z] Докажите неравенство [Чебышёва] для $x_1 \leqslant x_2 \leqslant \dots \leqslant x_n,\;$ $y_1 \geqslant y_2 \geqslant \dots \geqslant y_n$
+		$$n(x_1y_1 + x_2y_2 + \dots + x_ny_n) \leqslant (x_1+x_2 + \dots + x_n)(y_1+y_2 + \dots + y_n).$$
+
+		\item[\z] Пусть $a, b, c -$ положительные числа. Докажите неравенство
+		$$\frac{a^2-bc}{b+c} + \frac{b^2-ca}{a+c} + \frac{c^2-ab}{a+b} \geqslant 0.$$
+
+		\item[\z] Пусть $a \geqslant b \geqslant c \geqslant 0$ и $0 < x \leqslant y \leqslant z$. Докажите, что
+		$$\frac{a}{x} + \frac{b}{y} + \frac{c}{z} \geqslant \frac{a+b+c}{\sqrt[3]{xyz}} \geqslant \frac{3(a+b+c)}{x+y+z}.$$
+
+		\item[\z] Докажите, что для любых $a, b, c > 0$ выполнено неравенство 
+		$$\frac{a^3}{bc} + \frac{b^3}{ca} + \frac{c^3}{ab} \geqslant a + b + c.$$
+
+		\item[\z] Докажите, что для любых $a, b, c > 1$ выполнено неравенство
+		$$a^ab^bc^c \geqslant (abc)^{(a+b+c)/3}.$$
+
+		\item[\z] Пусть $\alpha > 2$. Докажите, что для любых $x, y, z > 0$, удовлетворяющих условию $xyz \geqslant 1$ выполнено неравенство
+		$$\frac{x^\alpha}{y+z} + \frac{y^\alpha}{z+x} + \frac{z^\alpha}{x+y} \geqslant \frac{3}{2}.$$
+
+		\item[\z] \textit{Средним степенным степени k} $\in \N$ чисел $a_1, a_2, \dots a_n$ 
+		называется число $$A_k = \sqrt[k]{\frac{a_1^k + a_2^k + \dots + a_n^k}{n}}.$$ 
+		Докажите, что среднее арифметическое положительных чисел не превосходит их среднего степенного любой степени $k > 2$.
+		$$\frac{a_1+a_2 + \dots + a_n}{n} \leqslant \sqrt[k]{\frac{a_1^k +a_2^k + \dots + a_n^k}{n}}.$$
+
+		\item[\z] Пусть $a, b, c > 0$ и $ab + bc + ca = 1$. Докажите, что 
+		$$\sqrt[3]{\frac{1}{a} + 6b} + \sqrt[3]{\frac{1}{b} + 6c} + \sqrt[3]{\frac{1}{c} +6a} \leqslant \frac{1}{abc}.$$ 
+
+		\item[\z] Пусть $x, y, z > 0$ и $xyz = 1$. Докажите, что 
+		$$\frac{x^3}{(1+y)(1+z)} + \frac{y^3}{(1+z)(1+x)} + \frac{z^3}{(1+x)(1+y)} \geqslant \frac{3}{4}.$$
+
+	\end{enumerate}
+	
+
+
+
+
+
+\end{document}
+
+
+
+
+
+

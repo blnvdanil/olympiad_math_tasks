@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt,leqno]{article}
+
+\input{../../preferences/preferences.sty}
+\input{../../preferences/tools}
+
+
+\usepackage{hyperref}
+\hypersetup{				% Гиперссылки
+	unicode=true,           % русские буквы в раздела PDF
+	pdftitle={\#n+3 Неравенство Иенсена},   % Заголовок
+	pdfauthor={},      % Автор
+	pdfsubject={},      % Тема
+	pdfcreator={}, % Создатель
+	%pdfproducer={Производитель}, % Производитель
+	%pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+	colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+	linkcolor=red,          % внутренние ссылки
+	citecolor=black,        % на библиографию
+	filecolor=magenta,      % на файлы
+	urlcolor=cyan           % на URL
+}
+
+\title{Неравенство Иенсена}
+
+
+\date{}
+
+\begin{document}
+	
+	\maketitle
+
+	\newcounter{num}
+
+	\newcommand{\z}{\addtocounter{num}{1}%
+	\boxed{\arabic{num}} }
+
+	\newcommand{\hw}{\addtocounter{num}{1}%
+	\text{ДЗ }\boxed{\arabic{num}} }
+    
+	\begin{definition}
+		Множество точек называется \textit{выпуклым}, если все точки отрезка, образуемого двумя любыми точками данного множества, принадлежат множеству.
+	\end{definition}
+
+	\begin{definition}
+		Суперграфик (надграфик) это множество $G_+$, такое что
+		$$G_+ = \lbrace (x, y) \; | \; x \in D_{f},\; y \geqslant f(x) \rbrace $$
+	\end{definition}
+
+	\begin{definition}
+		Субграфик (подграфик) это множество $G_-$, такое что
+		$$G_- = \lbrace (x, y) \; | \; x \in D_{f},\; y \leqslant f(x) \rbrace $$
+	\end{definition}
+
+	\begin{definition}
+
+		\begin{enumerate}
+			\item[] 
+		\end{enumerate}
+		Фукнция называется \textit{выпуклой}, если ее суперграфик -- выпуклое множество.
+
+		Функция называется \textit{вогнутой}, если ее субграфик  -- выпуклое множество.
+	\end{definition}
+
+	\begin{enumerate}
+		\item[\z]  Пусть $a < b$ и $x = \lambda a + (1-\lambda) b$. Покажите, что если $\lambda$ пробегает отрезок $[0, 1]$, то $x$ пробегает отрезок  $[a, b]$.
+		\item[\z] Докажите, что функция $y = f(x)$ является выпуклой на промежутке $D$ тогда и только тогда, когда
+				$$f(\lambda x_1 + \mu x_2) \leq \lambda f(x_1) + \mu f(x_2).$$ 
+				для любых $x_1, x_2 \in D$ и неотрицательных $\lambda$ и $\mu$, удовлетворяющий условию $\lambda + \mu = 1$.
+		\item[\z] Докажите, что $y = x^2$ -- выпуклая функция на $\R$, а фукнция $y = \sqrt{x}$ -- вогнутая.
+		\item[\z] [\textit{Критерий выпуклости}]. Докажите, что функция $f$ выпуклая на отрезке тогда и только тогда, когда $f^{\prime\prime}(x) \geqslant 0$ для всех $x$ из отрезка. Наоборот, функция $f$ вогнута на ортрезке тогда и только тогда, когда $f^{\prime\prime}(x) \leqslant 0$ для всех $x$ из отрезка.
+	 
+	\end{enumerate}
+
+	\begin{definition}
+		Пусть в точках $(x_1, y_1), (x_2, y_2), \dots , (x_n, y_n)$ расположены массы $m_i > 0$. Центром масс данной системы назвается точка $(x_c, y_c)$, такая что
+		$$x_c = {m_1x_1 + m_2x_2 + \dots + m_nx_n \over m_1 + m_2 + \dots + m_n},\;\;\;\; y_c = {m_1y_1 + m_2y_2 + \dots + m_ny_n \over m_1 + m_2 + \dots + m_n}.$$
+	\end{definition}
+
+	\begin{enumerate}
+		\item[\z]  Одну из точек системы назовем красной, а остальные -- синими. Покажите, что центр масс данной системы совпадает с центром масс двух точек: красной и центра масс всех синих (в котором помещена масса всех синих точек).
+		\item[\z] Докажите, что центр масс нескольких точек выпуклого множества также принадлежит этому множеству.
+		\item[\z] [Неравенство Иенсена]. Рассмотрим выпуклую функцию $y = f(x)$, определенную на промежутке $D$, и числа $x_1, x_2, \dots , x_n \in D$. Пусть $\lambda_1, \lambda_2, \dots , \lambda_n$ -- положительные числа, сумма которых равна 1. Докажите неравенство Иенсена:
+			$$\lambda_1f(x_1) + \lambda_2f(x_2) + \dots + \lambda_nf(x_n) \geqslant f(\lambda_1x_1 + \lambda_2x_2 + \dots + \lambda_nx_n).$$ 
+		\item[\z] Используя неравенство Иенсена, докажите неравенство между средними:
+		$${a_1+a_2+ \dots + a_n \over n} \leqslant \sqrt{ {a_1^2 + a_2^2 + \dots + a_n^2 \over n}  },$$
+		$${a_1+a_2 + \dots + a_n \over n} \geqslant {n \over {1\over a_1} + {1 \over a_2} + \dots + {1\over a_n}}.$$ 	
+		\item[\z] Докажите неравенство Коши:
+					$$\sqrt[n]{x_1x_2 \dots x_n} \leqslant {x_1+x_2+\dots +x_n \over n}.$$
+		\item[\z] С помощью неравенства иенсена докажите неравенство
+		$$\sqrt[n]{x_1x_2\dots x_n} \geqslant {n \over \frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}}$$  
+	\end{enumerate}
+
+
+
+\end{document}
+
+
+
+
+
+
