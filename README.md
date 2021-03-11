@@ -1,2 +1,3 @@
 # olympiad_math_tasks
-There are some olympiad tasks for students.
+- [Первая](https://github.com/blnvdanil/olympiad_math_tasks/edit/master/README.md)
+- [Первая](https://github.com/blnvdanil/olympiad_math_tasks/edit/master/README.md)
