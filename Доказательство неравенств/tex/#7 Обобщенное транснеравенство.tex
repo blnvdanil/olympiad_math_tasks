@@ -1,0 +1,94 @@
+\documentclass[a4paper,12pt,leqno]{article}
+
+
+\input{../../preferences/preferences.sty}
+\input{../../preferences/tools}
+
+
+\usepackage{hyperref}
+\hypersetup{				% Гиперссылки
+	unicode=true,           % русские буквы в раздела PDF
+	pdftitle={Доказательство неравенств},   % Заголовок
+	pdfauthor={},      % Автор
+	pdfsubject={},      % Тема
+	pdfcreator={}, % Создатель
+	%pdfproducer={Производитель}, % Производитель
+	%pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+	colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+	linkcolor=red,          % внутренние ссылки
+	citecolor=black,        % на библиографию
+	filecolor=magenta,      % на файлы
+	urlcolor=cyan           % на URL
+}
+
+
+
+\title{\textbf{Обобщенное транснеравенство}}
+\date{}
+\begin{document}
+
+	\parskip=0mm
+	\linespread{1}
+	\maketitle
+	
+	\newcounter{zadacha}
+	
+	\newcommand{\z}{\addtocounter{zadacha}{1}%
+		\boxed{\arabic{zadacha}} }
+	\section*{На занятии}
+	
+    \newcommand{\hw}{\addtocounter{zadacha}{1}%
+	\text{ДЗ }\boxed{\arabic{zadacha}} }
+
+    \begin{enumerate}
+        \item[\z] [\textit{обобщенное транснеравенство}] Рассмотрим наборы вещественных чисел $x_1 \leqslant x_2 \leaslant \dots \leqslant x_n$ и
+        $y_1 \leqslant y_2 \leaslant \dots \leqslant y_n$ и выпуклую функцию $f$. Докажите, что если $u_1, u_2, \dots, u_n$ ---произвольная перестановка из $y_i$, то выполнены неравенства:
+        $$f(x_1+y_{n}) + f(x_2+y_{n-1}) + \dots + f(x_n+y_1) \leqslant f(x_1+u_1) + f(x_2+u_2) + \dots + f(x_n+u_n) \leqslant$$ $$\leqslant f(x_1+y_1) + f(x_2+y_2) + \dots + f(x_n+y_n).$$
+        
+        \item[\z] Выбрав подходящую функцию, докажите, что 
+        $$(x_1+y_1)(x_2+y_2)\dots(x_n+y_n) \leqslant (x_1+u_1)(x_2+u_2)\dots (x_n+u_n)\leqslant (x_1+y_n)(x_2+y_{n-1})\dots (x_n+y_1).$$ 
+    
+        \item[\z] Выбрав подходящую функцию, докажите что
+        $$\frac{1}{x_1+y_n} + \frac{1}{x_2+y_{n-1}} + \dots + \frac{1}{x_n+y_1} \leqslant \frac{1}{x_1+u_1} + \frac{1}{x_2+u_{2}} + \dots + \frac{1}{x_n+u_n} \leqslant $$ $$\leqslant \frac{1}{x_1+y_1} + \frac{1}{x_2+y_{2}} + \dots + \frac{1}{x_n+y_n}.$$ 
+
+        \item[\z] Докажите, что для положительных чисел $a_1, a_2, \dots a_n$ выполнено неравенство
+        $$\left(1+\frac{a_1^2}{a_2}\right)\left(1+\frac{a_2^2}{a_3}\right)\dots \left(1+\frac{a_n^2}{a_1}\right) \geqslant (1+a_1)(1+a_2)\dots(1+a_n).$$ 
+
+        \item[\z] Докажите, что для положительных чисел $x, y, z$ выполнено неравенство
+        $$\sqrt{x+2^x} + \sqrt{y+2^y} + \sqrt{z+2^z} \leqslant \sqrt{y+2^x} + \sqrt{z + 2^y} + \sqrt{x + 2^z}.$$ 
+
+        \item[\z] Докажите, что для неотрицательных положительных чисел $x, y, z$ выполнено неравенство
+        $$\sqrt{3x^2 + xy} + \sqrt{3y^2 +yz} + \sqrt{3z^2+zx} \leqslant 2(x+y+z).$$ 
+
+    \end{enumerate}
+
+    
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
